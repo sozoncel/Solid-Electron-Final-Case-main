@@ -1,0 +1,124 @@
+<section class="wrapper">
+  <div class="container-fostrap">
+    <div class="content">
+      <div class="container">
+        <div class="row" *ngIf="categaryName === 'all' ">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let product of products | filterProduct:searchedTextPassed">
+            <div class="card">
+              <a class="img-card" [routerLink]="'/product-detail/' + product.id">
+                <img *ngIf="product.id <= 8" [src]="'assets/tv-products/product'+product.imageId+'.jpg'" />
+                <img *ngIf="product.id > 8" [src]="'assets/laptop-products/product'+product.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{product.name}}
+                </h4>
+                <p class="card-description">
+                  {{product.description}}
+                </p>
+              </div>
+              <div class="card-price">
+                <p>
+                  {{product.price | currency:'USD'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf=" categaryName === 'tv' ">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let product of tvProducts | filterProduct:searchedTextPassed">
+            <div class="card">
+              <a class="img-card" [routerLink]="'/product-detail/' + product.id">
+                <img [src]="'assets/tv-products/product'+product.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{product.name}}
+                </h4>
+                <p class="card-description">
+                  {{product.description}}
+                </p>
+              </div>
+              <div class="card-price">
+                <p>
+                  {{product.price | currency:'USD'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf=" categaryName === 'laptop'">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let product of laptopProducts | filterProduct:searchedTextPassed">
+            <div class="card">
+              <a class="img-card" [routerLink]="'/product-detail/' + product.id">
+                <img [src]="'assets/laptop-products/product'+product.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{product.name}}
+                </h4>
+                <p class="card-description">
+                  {{product.description}}
+                </p>
+              </div>
+              <div class="card-price">
+                <p>
+                  {{product.price | currency:'USD'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf=" categaryName === 'windows'">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let product of windowsProducts | filterProduct:searchedTextPassed">
+            <div class="card">
+              <a class="img-card" [routerLink]="'/product-detail/' + product.id">
+                <img [src]="'assets/laptop-products/product'+product.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{product.name}}
+                </h4>
+                <p class="card-description">
+                  {{product.description}}
+                </p>
+              </div>
+              <div class="card-price">
+                <p>
+                  {{product.price | currency:'USD'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf=" categaryName === 'ios'">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let product of iosProducts | filterProduct:searchedTextPassed">
+            <div class="card">
+              <a class="img-card" [routerLink]="'/product-detail/' + product.id">
+                <img [src]="'assets/laptop-products/product'+product.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{product.name}}
+                </h4>
+                <p class="card-description">
+                  {{product.description}}
+                </p>
+              </div>
+              <div class="card-price">
+                <p>
+                  {{product.price | currency:'USD'}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+<section class="order-form my-4 mx-4" *ngIf="orders.length > 0">
+  <div class="container pt-4">
+    <form [formGroup]="completeOrderForm">
+      <div class="row">
+        <div class="col-12">
+          <h1>Siparişini Tamamlama</h1>
+          <hr class="mt-1">
+        </div>
+        <div class="col-12">
+
+          <div class="row mx-4">
+            <div class="col-12 mb-2">
+              <label class="order-form-label">İsim</label>
+            </div>
+            <div class="col-12 col-sm-6">
+              <input class="order-form-input" formControlName="firstName" placeholder="İsim">
+              <div>
+                <small
+                  *ngIf="completeOrderForm.get('firstName')?.hasError('required') && completeOrderForm.touched">İsim
+                  alanı zorunludur</small>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 mt-2 mt-sm-0">
+              <input class="order-form-input" formControlName="lastName" placeholder="Soyisim">
+              <div>
+                <small
+                  *ngIf="completeOrderForm.get('lastName')?.hasError('required') && completeOrderForm.touched">Soyisim
+                  alanı zorunludur</small>
+                <small
+                  *ngIf="completeOrderForm.get('lastName')?.hasError('noSpaceAllowed') && completeOrderForm.touched">Soyisim
+                  alanına boş
+                  karakter giremezsiniz</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3 mx-4">
+            <div class="col-12">
+              <label class="order-form-label">Adres</label>
+            </div>
+            <div class="col-12">
+              <input class="order-form-input" formControlName="adress" placeholder="Addres">
+              <div>
+                <small *ngIf="completeOrderForm.get('adress')?.hasError('required') && completeOrderForm.touched">Adres
+                  alanı zorunludur</small>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 mt-2 pr-sm-2">
+              <input class="order-form-input" formControlName="city" placeholder="Şehir">
+              <div>
+                <small *ngIf="completeOrderForm.get('city')?.hasError('required') && completeOrderForm.touched">Şehir
+                  alanı zorunludur</small>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 mt-2 pl-sm-0">
+              <input class="order-form-input" formControlName="region" placeholder="İlçe">
+              <div>
+                <small *ngIf="completeOrderForm.get('region')?.hasError('required') && completeOrderForm.touched">İlçe
+                  alanı zorunludur</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <button type="button" id="btnSubmit" class="btn btn-dark d-block mx-auto btn-submit"
+                (click)="takeOrder()">Sipariş Ver</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

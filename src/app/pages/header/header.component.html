@@ -1,0 +1,102 @@
+<header class="section-header" *ngIf="sessionStatus?.isLogin">
+
+  <nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav d-none d-md-flex mr-auto">
+        <li class="nav-item"><a class="nav-link" data-abc="true" routerLink="/home">Anasayfa</a></li>
+        <li class="nav-item"><a class="nav-link" data-abc="true" routerLink="/home">Ürünler</a></li>
+        <li class="nav-item"><a class="nav-link" data-abc="true" routerLink="/cart">Sepet</a></li>
+      </ul>
+      <ul class="navbar-nav d-flex align-items-center" *ngIf="!sessionStatus?.userName">
+        <li class="nav-item">
+          <button class="btn btn-success" (click)="login()">Giriş Yap</button>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-flex align-items-center" *ngIf="sessionStatus?.userName">
+        <li class="nav-item">
+          <div class="d-flex flex-row">
+            <img src="assets/img_avatar.png" class="rounded-circle" width="30" height="30">
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" data-abc="true"
+            data-bs-toggle="dropdown"><span>{{sessionStatus?.userName}}</span></a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="shopingCart">
+              <p><a class="btn link-dark" routerLink="/cart">Sepetim</a></p>
+            </li>
+            <li>
+              <p><a class="btn link-dark" routerLink="/customer-orders">Siparişlerim</a></p>
+            </li>
+            <li>
+              <p><a class="btn link-danger" (click)="logout()">Çıkış yap</a></p>
+            </li>
+          </ul>
+        </li>
+      </ul> <!-- list-inline //  -->
+    </div> <!-- navbar-collapse .// -->
+    <!-- container //  -->
+  </nav> <!-- header-top-light.// -->
+
+  <section class="header-main border-bottom bg-white">
+    <div class="container-fluid">
+      <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+        <div class="col-md-2">
+          <img class="d-none d-md-flex home-icon" src="assets/login-page-image.jpg" routerLink="/home" width="80">
+        </div>
+        <div class="col-md-8">
+          <div class="d-flex form-inputs">
+            <input class="form-control" type="text" placeholder="Ürün ara..." [(ngModel)]="searchText"
+              (input)="onSearchTextChanged()">
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="cart d-flex d-none d-md-flex flex-row align-items-center" routerLink="/cart">
+            <span class="shop-bag"><i class='bx bxs-shopping-bag'></i></span>
+            <div class="d-flex flex-column ms-2">
+              <span class="qty">{{cartItems.length}} Ürün</span>
+              <span class="fw-bold">{{totalPrice | currency:'USD'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand d-md-none d-md-flex">Categories</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{ active: clickedCategory === 'all' }" aria-current="page"
+              (click)="showCategory('all')">Tüm Ürünler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{ active: clickedCategory === 'tv' }" (click)="showCategory('tv')">Tv</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+              [ngClass]="{ active: clickedCategory === 'laptop' || clickedCategory === 'windows' || clickedCategory === 'ios' }"
+              id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+              (click)="showCategory('laptop')">
+              Laptop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" [ngClass]="{ active: clickedCategory === 'windows'}"
+                  (click)="showCategory('windows')">Windows</a></li>
+              <li><a class="dropdown-item" [ngClass]="{ active: clickedCategory === 'ios'}"
+                  (click)="showCategory('ios')">IOS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

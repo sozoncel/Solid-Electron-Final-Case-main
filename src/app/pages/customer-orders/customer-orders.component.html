@@ -1,0 +1,118 @@
+<div class="container-fluid">
+  <div class="container" *ngIf="userOrder == null">
+    <p class="display-6 d-flex justify-content-center">Geçmiş siparişiniz bulunmamaktadır...</p>
+  </div>
+  <div class="container" *ngIf="userOrder != null">
+    <!-- Title -->
+    <div class="d-flex justify-content-between align-items-center py-3">
+      <h2 class="h5 mb-0"><a href="#" class="text-muted"></a>Siparişleriniz #{{orderNumber}}</h2>
+    </div>
+
+    <!-- Main content -->
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Details -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="mb-3 d-flex justify-content-between">
+              <div>
+                <span class="me-3">{{date | date:'dd.MM.YYYY'}}</span>
+                <span class="me-3">#{{orderNumber}}</span>
+                <span class="me-3">Visa -1234</span>
+                <span class="badge rounded-pill bg-success">Teslim Edildi</span>
+              </div>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <ng-container *ngFor="let item of userOrder">
+                  <tr *ngFor="let item of item.productInformation">
+                    <td>
+                      <div class="d-flex mb-2">
+                        <div class="flex-shrink-0">
+                          <img *ngIf="item.id <= 8 " [src]="'assets/tv-products/product'+item.imageId+'.jpg'" alt=""
+                            width="50" class="img-fluid">
+                          <img *ngIf="item.id > 8 " [src]="'assets/laptop-products/product'+item.imageId+'.jpg'" alt=""
+                            width="50" class="img-fluid">
+                        </div>
+                        <div class="flex-lg-grow-1 ms-3">
+                          <h6 class="small mb-0"><a [routerLink]="'/product-detail/'+item.id"
+                              class="text-reset">{{item.name}}</a></h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>{{item.quantity}}</td>
+                    <td class="text-end">{{item.totalPrice | currency:'USD'}}</td>
+                  </tr>
+                </ng-container>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2">Ara Toplam</td>
+                  <td class="text-end">{{totalPrice | currency:'USD'}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Kargo Ücreti</td>
+                  <td class="text-end">$0.00</td>
+                </tr>
+                <tr class="fw-bold">
+                  <td colspan="2">TOPLAM</td>
+                  <td class="text-end">{{totalPrice | currency:'USD'}}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!-- Payment -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <h3 class="h6">Ödeme Yöntemi</h3>
+                <p>Visa -1234 <br>
+                  Toplam: {{totalPrice | currency:'USD'}} <span class="badge bg-success rounded-pill">ÖDENDİ</span></p>
+              </div>
+              <div class="col-lg-6">
+                <h3 class="h6">Fatura Adresi</h3>
+                <address>
+                  <strong>{{userOrder[userOrder.length-1].firstName}}
+                    {{userOrder[userOrder.length-1].lastName}}</strong><br>
+                  {{userOrder[userOrder.length-1].adress}}<br>
+                  {{userOrder[userOrder.length-1].city}},
+                  {{userOrder[userOrder.length-1].region}}<br>
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- Customer Notes -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="h6">Müşteri Notu</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat excepturi magnam eius ducimus officiis
+              perferendis, eaque inventore reiciendis sint quae nisi exercitationem eum voluptatem similique quo, fugiat
+              fugit. Veritatis, doloremque!</p>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <!-- Shipping information -->
+          <div class="card-body">
+            <h3 class="h6">Kargo Bilgileri</h3>
+            <strong>FedEx</strong>
+            <span><a class="text-decoration-underline" target="_blank">FF1234567890</a> <i
+                class="bi bi-box-arrow-up-right"></i> </span>
+            <hr>
+            <h3 class="h6">Ev Adresi</h3>
+            <address>
+              <strong>{{userOrder[userOrder.length-1].firstName}}
+                {{userOrder[userOrder.length-1].lastName}}</strong><br>
+              {{userOrder[userOrder.length-1].adress}}<br>
+              {{userOrder[userOrder.length-1].city}}, {{userOrder[userOrder.length-1].region}}<br>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

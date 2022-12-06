@@ -1,0 +1,62 @@
+<section class="mt-5">
+  <div class="container">
+    <div class="cart" *ngIf="cartItems.length > 0">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="text-white">Ürün Resmi</th>
+              <th scope="col" class="text-white">Ürün Adı</th>
+              <th scope="col" class="text-white">Birim Fiyat</th>
+              <th scope="col" class="text-white">Adet</th>
+              <th scope="col" class="text-white">Toplam Fiyat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems;let i = index">
+              <td>
+                <div class="main">
+                  <div class="d-flex">
+                    <img *ngIf="item.id <= 8 " [src]="'assets/tv-products/product'+item.imageId+'.jpg'" alt=""
+                      width="145" height="98">
+                    <img *ngIf="item.id > 8 " [src]="'assets/laptop-products/product'+item.imageId+'.jpg'" alt=""
+                      width="145" height="98">
+                  </div>
+                </div>
+              </td>
+              <td>
+                <h6>{{ item.name }}</h6>
+              </td>
+              <td>
+                <h6>{{item.price | currency:'USD'}}</h6>
+              </td>
+              <td>
+                <h6>{{item.quantity}}</h6>
+              </td>
+              <td>
+                <h6>{{item.totalPrice | currency:'USD'}}</h6>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="display-6 d-flex justify-content-center" *ngIf="cartItems.length == 0">
+      Sepetinizde ürün bulunmamaktadır
+    </p>
+  </div>
+</section>
+<div class="col-lg-4 offset-lg-4" *ngIf="cartItems.length > 0">
+  <div class="checkout">
+    <ul>
+      <li class="subtotal">Ara Toplam
+        <span>{{totalPrice | currency:'USD'}}</span>
+      </li>
+      <li class="cart-total">Toplam
+        <span>{{totalPrice | currency:'USD'}}</span>
+      </li>
+    </ul>
+    <a class="proceed-btn" (click)="completeOrder()">Siparişi Tamamla</a>
+  </div>
+</div>

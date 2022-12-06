@@ -1,0 +1,176 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "burakozel",
+      "email": "burak@ozel.com",
+      "password": "12345678"
+    },
+    {
+      "userName": "alitoplu",
+      "email": "ali@ali.com",
+      "password": "12121212",
+      "id": 2
+    },
+    {
+      "userName": "Furkan Akpolat",
+      "email": "furkan@furkan.com",
+      "password": "35795123",
+      "id": 3
+    },
+    {
+      "userName": "yigitsargin",
+      "email": "yigit@sargin.com",
+      "password": "987654321",
+      "id": 4
+    },
+    {
+      "userName": "aslıozel",
+      "email": "asli@asli.com",
+      "password": "12345678",
+      "id": 5
+    },
+    {
+      "userName": "anılkavuk",
+      "email": "anil@kavuk.com",
+      "password": "12121212",
+      "id": 6
+    },
+    {
+      "userName": "sumeyracam",
+      "email": "sumeyra@cam.com",
+      "password": "12345678",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "LG 65inc 4K UHD HDR LED webOS Smart TV",
+      "description": "4K Ultra HD (3840 x 2160) yerel çözünürlüğe sahip 6inc LED ekran, en sevdiğiniz filmleri, TV şovlarını ve diğer içerikleri gerçekçi görüntü kalitesiyle hayata geçirir.60HZ yenileme hızı, oyun ve filmlerinizde akıcı aksiyon ile gecikmesiz ve bulanık olmayan görseller sunar.Muhteşem ses ve video deneyimi için a5 Gen 5 AI işlemci tarafından desteklenen Smart TV teknolojisi.WebOS platformu, evinizin rahatlığında çok çeşitli çevrimiçi eğlence uygulamalarından içerik akışı yapmanıza yardımcı olacak sezgisel bir kullanıcı arayüzüne sahiptir",
+      "price": 799.98,
+      "imageId": 1,
+      "catagoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Sony MASTER 48inc 4K UHD HDR OLED Android OS Smart TV",
+      "description": "3840 x 2160 yerel çözünürlüğe sahip 48 inç 4K Ultra HD ekran, gerçekçi görsellerle inanılmaz görüntü kalitesi sunar.HDR1, Dolby Visions, IMAX Enhanced ve Netflix Kalibre Edilmiş Modu, ne izliyor veya oynuyor olursanız olun, sürükleyici eğlence için filmlerinizin ve TV şovlarınızın kalitesini artırır.Pixel Contrast Booster, OLED ekranda canlı renkler sunmak için her pikselin süper şarj edilmesini sağlar.4K X-Reality PRO ve Nesne Tabanlı Süper Çözünürlük doğal görünümlü görseller sağlar.Hızlı yanıt veren Özel Oyun Modu, pürüzsüz ve bulanık olmayan görsellerle PlayStation oyunlarınızın keyfini çıkarmanızı sağlar",
+      "price": 999.98,
+      "imageId": 2,
+      "catagoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "TCL 4-Series 50inc 4K UHD HDR LED Smart Google TV",
+      "description": "50inc ekran, gerçekçi bir deneyim için Full HD çözünürlükten dört kat daha iyi 4K Ultra HD görüntüler görüntüler.Doğrudan aydınlatmalı LED ekrana sahip düz panel, yüksek kaliteli görüntü deneyimi için mükemmel parlaklık ve renk sunar.YouTube TV, Sling, Hulu ve daha fazlası gibi hizmetler sunarak kablosuz HD içeriğine erişim sağlayan dahili dijital ayarlayıcı ile kablo kesmek artık çok kolay.Binlerce mevcut uygulamayı izlemenize, canlı şovları izlemenize ve izleme listenize göre önerilerde bulunmanıza olanak tanıyan Smart TV.Yerleşik Google Asistan, yalnızca bir sesli komutla önerilerinizi kişiselleştirmeniz için TV üzerinde kontrol sahibi olmanızı sağlar.Çift bantlı Wi-Fi 5 ve Ethernet bağlantı noktası, en sevdiğiniz içeriklerin kesintisiz akışı için TV'nizle kablosuz bağlantı sunar",
+      "price": 349.98,
+      "imageId": 3,
+      "catagoryId": 1
+    },
+    {
+      "id": 4,
+      "name": "LG 50inc 4K UHD HDR LED webOS Smart TV",
+      "description": "4K UHD 3840 x 2160 yerel çözünürlüğe sahip 50inc LED ekran, her sahnede optimum renkler, netlik ve kontrast sunar.Aktif HDR desteği, resim yan yana ayarlamalar için HDR10 ve HLG'yi içerir, böylece her sahnedeki tüm detayların ve renklerin keyfini çıkarabilirsiniz.60Hz yenileme hızı, oyun ve filmlerinizde gecikme ve hareket bulanıklığı olmayan akıcı hareket sunar.Standart, Canlı, Sinema ve daha fazlası gibi yerleşik video modları, çeşitli içerik türlerini optimize eder ve iyileştirir",
+      "price": 849.99,
+      "imageId": 4,
+      "catagoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "LG 50inc 4K UHD HDR LED webOS Smart TV",
+      "description": "4K Ultra HD (3840 x 2160) yerel çözünürlüğe sahip 50inc LED ekran, tüm eğlencenizi gerçeğe yakın netlikte sunar.60HZ yenileme hızı, hızlı aksiyonun hiçbir anını kaçırmamanız için kareden kareye bulanıklığı en aza indirir.a5 Gen 5 AI işlemci tarafından desteklenen Smart TV teknolojisi, her seferinde inanılmaz ses ve video kalitesi sunar.webOS işletim sistemi, sezgisel bir kullanıcı arabirimi ve özelleştirilmiş önerilerle en sevdiğiniz akış uygulamalarına erişim sunar",
+      "price": 599.99,
+      "imageId": 5,
+      "catagoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "Sony BRAVIA XR A90K 48inc 4K UHD HDR OLED Smart",
+      "description": "48 inç televizyon, ayrıntılı görüntüleme için 3840 x 2160 ekran sunar.Akıllı Bilişsel İşlemci XR, yoğun kontrast ve gerçekçi renklendirme ile gerçek dünyada gördüğümüz şekli yeniden yaratır.XR OLED Contrast Pro, gerçeğe yakın derinlik ve parlaklıkla OLED'in güzelliğini oturma odanıza getiriyor.XR Triluminos Pro, geniş bir doğru renk yelpazesiyle görüntü kalitesini artırır",
+      "price": 1599.98,
+      "imageId": 6,
+      "catagoryId": 1
+    },
+    {
+      "id": 7,
+      "name": "Sony BRAVIA 75inc 4K UHD HDR LED Google TV Smart",
+      "description": "3840 x 2160 yerel çözünürlüğe sahip 75inc 4K LED ekran, inanılmaz netlik ve gerçekçilik sunar.XR Triluminos Pro, Full Array LED kontrastı ve XR Contrast Booster 10, inanmak için görmeniz gereken zenginlik için renk ve kontrastı geliştirir.Bilişsel İşlemci XR, doğal, gerçeğe yakın görüntü kalitesi sunmak için akıllı teknolojiyi kullanır.XR Motion Clarity, hızlı aksiyonun hiçbir anını kaçırmamanız için bulanıklığı ortadan kaldırır.4K yükseltme, kaybolan ayrıntı ve dokuyu geri yüklemek için içeriği otomatik olarak 4K'ya yakın çözünürlüğe yükseltir",
+      "price": 1999.99,
+      "imageId": 7,
+      "catagoryId": 1
+    },
+    {
+      "id": 8,
+      "name": "LG 75inc 4K UHD HDR LED webOS Smart TV",
+      "description": "4K Ultra HD (3840 x 2160) yerel çözünürlüğe sahip 75 inç LED ekran, tüm eğlencenizi gerçeğe yakın netlikte sunar.8,3 milyondan fazla 4K aktif piksel, her sahnede etkileyici bir gerçekçiliğin keyfini çıkarabilmeniz için tam HD'nin dört katı çözünürlük sağlar.60HZ yenileme hızı, hızlı aksiyonun hiçbir anını kaçırmamanız için kareden kareye bulanıklığı en aza indirir.Aktif HDR, HDR10 ve HLG desteğiyle sahne sahne resim ayarı sunar.20 watt alt hoparlör ve AI Sound, AI Acoustic Tuning Ready ve Clear Voice ses geliştirmeleri, sizi tamamen saf sesin içine çeker",
+      "price": 1199.98,
+      "imageId": 8,
+      "catagoryId": 1
+    },
+    {
+      "id": 9,
+      "name": "ASUS VivoBook 15 X513 15.6 inc Laptop",
+      "description": "Intel Core i5-1135G7 İşlemci, gecikmesiz bir deneyim için 2,4 GHz'den 4,2 GHz'e kadar CPU hızıyla iyi performans gösterir.Yerleşik 8 GB DDR4 ve 4 GB DDR4 SO-DIMM RAM ile güvenilir.512 GB M.2 NVMe PCIe 3.0 SSD, daha fazla depolama alanı sunarken verimliliği artırır.Intel Iris Xe Graphics, videoların netliğini artırır ve şimdiye kadarki en iyi film izleme veya oyun oynama deneyimini sağlar.15,6 inç Full HD NanoEdge çerçeveli ekran, daha geniş bir görüş için muhteşem bir %85 ekran-gövde oranı sağlayan dar bir çerçeveye sahiptir.Wi-Fi 6(802.11ax) ve Bluetooth 5.0 (Çift bant) 2x2, daha fazla hız ve minimum tıkanıklık ile sorunsuz kablosuz bağlantı sağlar",
+      "price": 749.99,
+      "imageId": 1,
+      "catagoryId": 2
+    },
+    {
+      "id": 10,
+      "name": "Acer Aspire 3 15.6 inc Laptop",
+      "description": "4 GB DDR4 RAM'e sahip 1,5 GHz AMD A4-9120e çift çekirdekli işlemci, tüm temel bilgi işlem görevlerinin yanı sıra çoklu görev işlemlerini de gerçekleştirebilir.1 TB'a kadar PCIe NVMe SSD'ler için iki ek yuvaya sahip 128 GB SSD depolama, tonlarca veriyi güvenli bir şekilde depolamanıza olanak tanır.1366 x 768 ekran çözünürlüğüne sahip 15,6 inç ekran, yüksek görsel kalitede mükemmel resimler üretir.Kablolu ve kablosuz ağlara bağlanmak için tümleşik Ethernet bağlantı noktası ve 802.11a/b/g/n/ac Wi-Fi.Dosya paylaşımı, ses akışı ve daha fazlası için uyumlu akıllı telefonlar veya ses cihazlarıyla eşleştirme için entegre Bluetooth 4,2",
+      "price": 348.97,
+      "imageId": 2,
+      "catagoryId": 2
+    },
+    {
+      "id": 11,
+      "name": "HP 15.6 inc Laptop - Shadow Black (Intel Celeron N4500/256GB SSD/8GB RAM/Windows 10)",
+      "description": "1,1 GHz Çift Çekirdekli Intel Celeron N4500, 4 MB işlemci önbelleği ve 8 GB DDR4-2933 MHz RAM (1 X 8 GB), güvenilir işlemcisiyle iş akışınızı sorunsuz ve hızlı tutar.256 GB SSD, tüm dosyalarınız, resimleriniz, videolarınız ve belgeleriniz için yeterli alana sahiptir.1366 x 768 HD çözünürlüğe sahip 15,6inc diyagonal IPS ekran, etkileyici renk doğruluğu ve ekran reprodüksiyonu ile optimum kalitede görselleri ekrana yansıtır.Realtek Wi-Fi 6 (1x2) ve Bluetooth 5.2, desteklenen cihazlarla süper hızlı kablosuz entegrasyon ve veri aktarımı sunar.Bir SuperSpeed USB Type-C 5 Gbps sinyal hızı ve 2 SuperSpeed USB Type-A 5 Gbps Sinyal Hızı, sorunsuz sinyal aktarımı sağlar",
+      "price": 449.99,
+      "imageId": 3,
+      "catagoryId": 2
+    },
+    {
+      "id": 12,
+      "name": "Samsung Galaxy Book2 15.6 inc Laptop",
+      "description": "1,7 GHz 12. Nesil Intel Core i7-1255U işlemci ve 8 GB RAM, inanılmaz performans sunar.256 GB katı hal sürücüsü (SSD), tüm dosyalarınızı kaydetmeniz için bol miktarda alan sağlar.1920 x 1080 yerel çözünürlüğe sahip 15,6inc LED ekran, canlı renkler sunar.Wi-Fi 6E (Gig+) 802.11 ax bağlantıda kalmanıza yardımcı olurken, Bluetooth 5.1 uyumlu cihazları kolayca eşleştirmenizi sağlar.İki USB-C bağlantı noktası, İki USB 3.2, bir HDMI bağlantı noktası, bir kulaklık çıkışı/mikrofon girişi Kombosu ve bir Micro SD yuvası, çeşitli depolama aygıtlarını ve diğer bilgisayar aksesuarlarını bağlamanıza olanak tanır",
+      "price": 1189.99,
+      "imageId": 4,
+      "catagoryId": 2
+    },
+    {
+      "id": 13,
+      "name": "Apple MacBook Air 13.6inc w/ Touch ID (2022) - Midnight (Apple M2 Chip / 256GB SSD / 8GB RAM)",
+      "description": "CPU, GPU ve makine öğrenimi performansında dev bir sıçrama için Apple tasarımı M2 çip.18 saate varan pil ömrüyle her zamankinden daha uzun süre çalışın (Pil ömrü kullanıma ve yapılandırmaya göre değişir).8 çekirdekli CPU, 3,5 kata kadar daha hızlı performans sunar.Yoğun grafikli uygulamalar ve oyunlar için 5 kata kadar daha hızlı grafiklere sahip 8 çekirdekli GPU çekirdeği.Gelişmiş makine öğrenimi için 16 çekirdekli Neural Engine.8 GB birleşik bellek, yani yaptığınız her şey hızlı ve akıcı.Süper hızlı SSD depolama, uygulamaları başlatır ve dosyaları anında açar",
+      "price": 1499.99,
+      "imageId": 5,
+      "catagoryId": 2
+    },
+    {
+      "id": 14,
+      "name": "Apple MacBook Pro 14inc (2021) - Space Grey (Apple M1 Pro Chip / 512GB SSD / 16GB RAM)",
+      "description": "İngilizce MacBook Pro.CPU, GPU ve makine öğrenimi performansında dev bir sıçrama için 8 çekirdekli Apple M1 Pro çip.16 GB RAM sayesinde yaptığınız her şey hızlı ve akıcıdır.Gelişmiş makine öğrenimi için 16 çekirdekli Neural Engine.14 çekirdekli GPU.Ultra hızlı 512 GB katı hal sürücüsü (SSD) son derece hızlıdır, böylece nereye giderseniz gidin tüm fotoğraflarınızı ve videolarınızı yanınızda götürebilirsiniz",
+      "price": 2499.99,
+      "imageId": 6,
+      "catagoryId": 2
+    },
+    {
+      "id": 15,
+      "name": "Apple MacBook Pro 14inc (2021) - Silver (Apple M1 Pro Chip / 512GB SSD / 16GB RAM)",
+      "description": "İngilizce MacBook Pro.CPU, GPU ve makine öğrenimi performansında dev bir sıçrama için 8 çekirdekli Apple M1 Pro çip.16 GB RAM sayesinde yaptığınız her şey hızlı ve akıcıdır.Gelişmiş makine öğrenimi için 16 çekirdekli Neural Engine.14 çekirdekli GPU.Ultra hızlı 512 GB katı hal sürücüsü (SSD) son derece hızlıdır, böylece nereye giderseniz gidin tüm fotoğraflarınızı ve videolarınızı yanınızda götürebilirsiniz",
+      "price": 2499.99,
+      "imageId": 7,
+      "catagoryId": 2
+    },
+    {
+      "id": 16,
+      "name": "Microsoft Surface Laptop Go 2 12.4 inc Touchscreen Laptop - Sandstone (Intel i5-1135G7/128GB SSD/8GB RAM)",
+      "description": "4,2 GHz hıza sahip 11. nesil Intel i5-1135G7 dört çekirdekli işlemci ve 8 GB LPDDR4X RAM, güçlü performans sunar.128 GB katı hal sürücüsü (SSD), temel uygulamalar, dosyalar ve daha fazlası için size hızlı, güvenilir depolama alanı sağlar.1536 x 1024 çözünürlüğe sahip 12,45inc PixelSense dokunmatik ekran, tüm göz atma, çalışma, film, TV şovları, oyunlar ve daha pek çok şeyde üretken kalmanızı ve meşgul olmanızı sağlayan harika görseller sunar.Wi-Fi 6 802.11ax, kablosuz ağlara yüksek hızlı bağlantı sağlar.Bluetooth 5.0, kulaklıklar, klavyeler, fareler ve daha fazlası gibi çeşitli uyumlu kablosuz cihazlarla eşleşir",
+      "price": 869.99,
+      "imageId": 8,
+      "catagoryId": 2
+    }
+  ]
+}
