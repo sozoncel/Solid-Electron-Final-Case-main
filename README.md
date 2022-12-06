@@ -1,9 +1,9 @@
 # SolidElectronFinalCase
 
 ## Steps to start the project
-1. After cloning or downloading repository install node modules with `npm install` commend
-2. I used json-server npm package for get  full fake api/db.json file. Starting json server run `json-server --watch api/db.json` for this project.
-3. Finally run `ng serve` starting this project
+1. install node modules with `npm install` commend
+2. json-server npm package for get  full fake api/db.json file. Starting json server run `json-server --watch api/db.json` 
+3. Run `ng serve`
 
 
 
