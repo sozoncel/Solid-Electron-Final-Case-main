@@ -27,10 +27,10 @@ export class LoginGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.sessionStatus?.isLogin){//sessionStatus store içindeki islogin değeri true ise kullanıcı giriş yapmış demektir guard etkisiz
+      if(this.sessionStatus?.isLogin){
         return true;
-      }else{//kullanıcı giriş yapması için logine yönlendirilir ve hata mesajı gösterirlir...guard devrede...
-        this.toastr.error("Bu sayfaya erişmek için login olmalısınız...","Hata");
+      }else{
+        this.toastr.error("Yetkisiz Giriş Tespit Edildi");
         this.router.navigateByUrl("/login");
         return false;
       }

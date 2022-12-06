@@ -8,22 +8,22 @@ export class SearchTextService {
 
   constructor() { }
 
-  private subject = new Subject<string>();//oluşturlan subject ile değişkene subscribaolup sürekli dinleme sağlanır...
-  private subject2 = new Subject<string>();//oluşturlan subject ile değişkene subscribaolup sürekli dinleme sağlanır...
+  private subject = new Subject<string>();
+  private subject2 = new Subject<string>();
 
     sendDataSearch(message: string) {
-        this.subject.next(message);//gelen değeri değişkene ata
+        this.subject.next(message);
     }
 
     sendData(message: string) {
-      this.subject2.next(message);//gelen değeri değişkene ata
+      this.subject2.next(message);
     }
 
     getDataSearch(): Observable<string> {
-      return this.subject.asObservable();//değişkeni istenilen yere return et...
+      return this.subject.asObservable();
     }
 
     getData(): Observable<string> {
-        return this.subject2.asObservable();//değişkeni istenilen yere return et...
+        return this.subject2.asObservable();
     }
 }

@@ -5,7 +5,7 @@ import { CartStoreState, initialCartStoreState } from './cart.state';
 export const cartReducer = createReducer<CartStoreState>(
   initialCartStoreState,
   on(
-    setShoppingCartModel, // yakalamak istediğim action
+    setShoppingCartModel,
     (currentState, action) => {
       return {
         ...currentState,

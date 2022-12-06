@@ -15,7 +15,7 @@ export class SessionStatusService {
   constructor(
     private store: Store<AppStoreState>
   ) {
-    this.sessionStatusModel$ = this.store.select( //Store'dan sessionStatusModel'ı alıyoruz
+    this.sessionStatusModel$ = this.store.select(
       (state) => state.sessionStatus.sessionStatusModel
     );
    }

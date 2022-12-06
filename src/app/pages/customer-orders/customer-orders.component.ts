@@ -33,7 +33,7 @@ export class CustomerOrdersComponent implements OnInit {
     });
     let orders:any = this.localStrogeService.get('Orders');
     this.customerOrders = JSON.parse(orders);
-    //console.log(this.customerOrders);
+   
     if(this.customerOrders){
       this.userOrder = this.customerOrders.filter((item:{userName:string}) => item.userName === this.customerName);
     console.log("--",this.userOrder);

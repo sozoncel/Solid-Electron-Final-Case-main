@@ -18,16 +18,16 @@ export class HomeComponent implements OnInit {
   iosProducts!:Product[];
 
   searchedTextPassed!: string;
-  subscription!: Subscription;//ilgili service'i dinleyip değişiklikleri yakalamak için rxjs faydalan...
+  subscription!: Subscription;
   categaryName:string = 'all';
 
 
   constructor(
-    private productsService:ProductsService,//listelenecek ürünleri service içersindeki get req. ile yakalayacağımız için import et..
-    private searchTextService:SearchTextService//search text i yakalayacağımız service import et...
+    private productsService:ProductsService,
+    private searchTextService:SearchTextService
   ) {
     this.subscription = this.searchTextService.getDataSearch().subscribe(x => {
-      this.searchedTextPassed = x;//service içersinde yakaladığımız değeri oluşturduğumuz değişkene atar. burada subject yardımıyla sürekli dinleme işlemi yapıyoruz..
+      this.searchedTextPassed = x;
     });
     this.searchTextService.getData().subscribe(x => {
       this.categaryName = x;
@@ -36,12 +36,12 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getProducts();//service'deki get isteği ile ürünleri getir.
+    this.getProducts();
   }
 
   getProducts() {
     this.productsService.getProducts().subscribe((res) => {
-      this.products = res;//gelen ürünler dizisini ilgili değişkene atar...
+      this.products = res;
       if(res.length > 0){
         this.getProductByCategory();
       }

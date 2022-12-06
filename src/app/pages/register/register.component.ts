@@ -13,28 +13,28 @@ import { UsersService } from 'src/app/services/users.service';
 export class RegisterComponent implements OnInit {
 
 
-  registerForm!: FormGroup;//kullanıcı kaydı için oluşturulacak formgroup
-  users!:User[];//jsondan çekilecek tüm userslar burada tutulacak...
+  registerForm!: FormGroup;
+  users!:User[];
 
   constructor(
-    private formBuilder:FormBuilder,//angular form oluşturmak için ilgili servis
-    private toastr:ToastrService,//kullanıcı mesajlarını göstermek için yüklemiş olduğumuz npm paket..
-    private usersService:UsersService,// user httpreq. işlemleri için oluşturulan servis..
-    private router:Router//sayfa yönlendirmeleri için gerekli olan router işlemini angular/router ile sağlıyoruz
+    private formBuilder:FormBuilder,
+    private toastr:ToastrService,
+    private usersService:UsersService,
+    private router:Router
     ) { }
 
   ngOnInit(): void {
-    this.getAllUsers();//userservis'e ulaşıp get isteğiyle dataları çekicek metot
-    this.createRegisterForm();//registerformu oluşturulacak metot sayfa ilk yüklendiğinde onInit içinde çağrılır...
+    this.getAllUsers();
+    this.createRegisterForm();
   }
 
   getAllUsers() {
     this.usersService.getUsers().subscribe((res) => {
-      this.users = res;//dönen response'u users'a atıyoruz.
+      this.users = res;
     });
   }
 
-  createRegisterForm() {//registerform inputları için başlangıç değeri ve validasyon ataması burada yapılır ayrıca burdaki key değerleri html tarafında formcontrolname için gereklidir...
+  createRegisterForm() {
     this.registerForm = this.formBuilder.group({
       userName: ['', Validators.required],
       email: ['', [Validators.required,Validators.email]],
@@ -43,31 +43,31 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    if(!this.registerForm.valid){//form invalid ise toastr ile kullanıcıya hata göster
+    if(!this.registerForm.valid){
       this.toastr.error('Form alanının tamamen doldurulduğundan emin olun', 'Sistem mesajı :');
     }else{
-      let isUsedEmail:boolean = false; //girilen email'i kontrol etmek için oluşturulan değişken
+      let isUsedEmail:boolean = false; 
 
-      this.users.forEach((user:{email:string}) => {//tüm user datası gezilerek girilen emailin kontrolü yapılır
-        if(this.registerForm.value.email === user.email){//eşleşen data varsa
-          isUsedEmail = true;//oluşturulan değişken değeri true...
+      this.users.forEach((user:{email:string}) => {
+        if(this.registerForm.value.email === user.email){
+          isUsedEmail = true;
         }
       });
 
-      if(isUsedEmail){//girilen email zaten varsa hata...
+      if(isUsedEmail){
         this.toastr.error("Girmiş olduğunuz email zaten kayıtlı...","Sistem Mesajı:");
-      }else{//mail users içersinde bulunmuyorsa kayıt işlemi yapılabilir...
-        const newUser: User = {//register form değerleri oluşturulan obje içersine atanır...
+      }else{
+        const newUser: User = {
           ...this.registerForm.value
         }
-        this.usersService.createAccount(newUser).subscribe({//userService içersindeki createAccount metoduna ulaşılıp post işlemi yapılır..
-          next: (res) => {//kullanıcıya işlem başarılı bilgisi göster...
+        this.usersService.createAccount(newUser).subscribe({
+          next: (res) => {
             this.toastr.success(`Hoşgeldin ${res.userName}! Hesabın başarılı bir şekilde oluşturuldu...`);
           },
-          error: (err) => {//hata varsa consola bas...
+          error: (err) => {
             console.log(err);
           },
-          complete: () => {//işlem tamamlandığında login sayfasına yönlendir..
+          complete: () => {
             this.router.navigateByUrl('/login');
           }
         });

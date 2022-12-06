@@ -21,7 +21,7 @@ export class UsersService {
     return this.httpClient.get<User[]>(`${this.controllerUrl}`);
   }
   public getUser(email:string){
-    return this.httpClient.get<User[]>(`${this.controllerUrl}?email=`+email);//query param ile varsa ilgili user get et...
+    return this.httpClient.get<User[]>(`${this.controllerUrl}?email=`+email);
   }
 
 }

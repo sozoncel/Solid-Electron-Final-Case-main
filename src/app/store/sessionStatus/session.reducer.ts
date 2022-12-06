@@ -5,7 +5,7 @@ import { initialSessionStoreState, SessionStoreState } from './session.state';
 export const sessionReducer = createReducer<SessionStoreState>(
   initialSessionStoreState,
   on(
-    setSessionStatusModel, // yakalamak istediğim action
+    setSessionStatusModel, 
     (currentState, action) => {
       return {
         ...currentState,

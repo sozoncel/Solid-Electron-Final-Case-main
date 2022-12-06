@@ -14,14 +14,14 @@ import { SessionStatusService } from 'src/app/services/session-status.service';
 })
 export class HeaderComponent implements OnInit {
 
-  searchText:string = '';//ngmodel ile inputdan alınacak değeri bu deşikene atar...
+  searchText:string = '';
   sessionStatus!:Session | null;
   cartItems!:Product[];
   totalPrice!:number;
   clickedCategory:string = 'all';
 
   constructor(
-    private searchTextService:SearchTextService,//oluşturulan servis'e yakaladığı değeri göndericek...
+    private searchTextService:SearchTextService,
     private sessionStatusService:SessionStatusService,
     private router:Router,
     private productService:ProductsService
@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.sessionStatusProcess();
-    this.searchTextService.sendData(this.searchText);//observable aracılığıyla subscribers'lara text'i gönder
-    this.onSearchTextChanged();//bu metot ile her değişiklik olduğunda yakalaya bilmek için html tarafında input eventi ile ilgili inputu yalayıp tekrar service içersindeki sendData metoduna gönderir...
+    this.searchTextService.sendData(this.searchText);
+    this.onSearchTextChanged();
     this.productService.shopingCartModel$.subscribe((res) => {
       this.cartItems = res;
       this.totalPrice = 0;
@@ -46,20 +46,20 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  onSearchTextChanged() {//input değeri değiştiğinde bu metot çağrılır..
-    this.searchTextService.sendDataSearch(this.searchText);//değişiklik servisteki sendData metoduna gönderilir...
+  onSearchTextChanged() {
+    this.searchTextService.sendDataSearch(this.searchText);
   }
   showCategory(categoryName:string){
     this.searchTextService.sendData(categoryName);
     this.clickedCategory = categoryName;
   }
 
-  login(){//navbarda bulunnan giriş yap butonu burayı teikler...
-    this.router.navigateByUrl('/login');//login page yönlendir..
+  login(){
+    this.router.navigateByUrl('/login');
   }
-  logout(){//navbarda bulunnan dropdown içersindeki çıkış yap butonu burayı teikler...
-    this.sessionStatusService.deleteSessionFromStore();//store'da sessionı temizle
-    this.router.navigateByUrl('/login');//login page yönlendir...
+  logout(){
+    this.sessionStatusService.deleteSessionFromStore();
+    this.router.navigateByUrl('/login');
   }
 
 }

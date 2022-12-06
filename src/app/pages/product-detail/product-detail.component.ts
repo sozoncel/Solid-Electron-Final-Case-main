@@ -20,25 +20,25 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private productsService:ProductsService,
-    private route:ActivatedRoute, //ilgili id'yi yakalamak için faydalanılacak...
+    private route:ActivatedRoute, 
     private toastr:ToastrService
     ) { }
 
   ngOnInit(): void {
-    this.productId = Number(this.route.snapshot.paramMap.get('id'));//activated route ile id'yi yakala... string geldiği için number ile tipini number'a çevir.
-    this.getProduct(this.productId);//istek yapılacak metot.
+    this.productId = Number(this.route.snapshot.paramMap.get('id'));
+    this.getProduct(this.productId);
   }
 
 
   getProduct(id:number) {
-    this.productsService.getProduct(id).subscribe((res) => {//product serviceden ilgili json'a get isteği atıp ürünü getir.
+    this.productsService.getProduct(id).subscribe((res) => {.
       if(res != null){
-        this.product = res; //dönen response'u oluşturulan değişkene ata
+        this.product = res;
         this.totalPrice = res.price;
       }
-      //console.log(this.product);
-      this.productDetailSubstances = this.product.description.split('.');//gelen açıklamaları split metodu yardımıyla parçalayıp html tarafında liste şeklinde göster.
-      //console.log(this.productDetailSubstances);
+     
+      this.productDetailSubstances = this.product.description.split('.');
+    
     });
   }
 
